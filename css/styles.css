@@ -86,12 +86,46 @@ h1, h2, h3, h4, h5, h6{
   color: #f0fff0;
   font-family: 'Permanent Marker', cursive;
   font-size: 2rem;
-  font-weight: normal;
+  font-weight: 800;
   padding-bottom: 10px;
   z-index: 10;
 
 }
+/* ARROW */
+.box .arrow {
+
+  position: absolute;
+  top: calc(100% - 20%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  height: 100%; 
+  width: auto; 
+  z-index: 10;
+
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+.box .arrow a{
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  text-decoration: none;
+  transition: .2s ease-in-out;
+}
+.box .arrow a:hover{
+  color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+}
+
 .semi-heading{ color: #11999E; }
+
 hr{
 
   border-width: 2px;
@@ -100,6 +134,41 @@ hr{
   width: 30%;
   margin: 8% auto;
 
+}
+/* header section */
+.header{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  padding: 50px 30px;
+  text-transform: uppercase;
+  z-index: 100;
+  transition: .3s ease-in;
+  /* filter: drop-shadow(2px 0 3px #708090); */
+
+}
+.header .navbar{
+
+  display: inline-flex;
+  list-style-type: none;
+  margin: 0;
+
+}
+.header .navbar li a{
+
+  color: #fff;
+  font-weight: 800;
+  margin: 0 20px;
+  width: 100%;
+  text-decoration: none;
+  word-spacing: 3px;
+}
+.header .navbar li a:hover{
+
+  color: #11CDD4;
 }
 
 /* Banner Section */
@@ -173,30 +242,6 @@ p{
 
 }
 
-/* .top-cloud{
-
- position: absolute;
- top: 50px;
- right: 300px;
-
-}
-.technology{
-
-  position: absolute;
-  left: 200px;
-  bottom: 200px;
-
-} */
-
-/* .developer{
-
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  height: 60%; 
-  width: auto; 
-} */
 
 /* Skills Section */
 
@@ -291,6 +336,19 @@ p{
   font-size: 0.75rem;
   padding: 20px 0;
   
+}
+
+/* ANIMATIONS */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 
 

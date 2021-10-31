@@ -10,15 +10,12 @@
     <title>Norenz Manalang | Website</title>
 
     <!-- Icon -->
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="images/gif" sizes="32x32">
   
     <!-- Styles CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- Google Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Poppins&display=swap" rel="stylesheet"> -->
-
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
@@ -32,16 +29,29 @@
     <section id="banner">
       
       <div class="container-fluid">
+
         <div class="box">
+          <div class="header">
+            <h1><a href="">NZ</a></h1>
+            <ul class="navbar">
+              <li><a href="#banner" id="">Home</a></li>
+              <li><a href="#tech-stack" id="">My Expertise</a></li>
+              <li><a href="#works" id="">My Works</a></li>
+              <li><a href="#contact" id="">Let's talk!</a></li>
+              <li><a href="#testimonials" id="">Testimonials</a></li>
+            </ul>
+          </div>
+
+          
           <div class="overlay"></div>
           <video src="background-video.mp4" type="video/mp4" class="bg-video" muted loop autoplay> </video>
-          <!-- <img class="smartphone" src="images/smartphone.png" alt="smartphone"> -->
-          <!-- <img class="top-cloud" src="images/cloud.png" alt="cloud-db"> -->
+          
           <h1 class="big-heading">NORENZ MANALANG</h1>
-          <h2 class="sub-heading">Web Developer</h2>
-          <!-- <img class="technology" src="images/technology.png" alt="technology"> -->
-          <!-- <img class="bulb" src="images/project-management.png" alt="bulb"> -->
-          <!-- <img class="developer" src="images/software-developer.png" alt="developer-img">  -->
+          <h2 class="sub-heading">Developer</h2>
+          
+          <div class="arrow bounce">
+            <a class="fa fa-arrow-down fa-2x" href="#tech-stack"></a>
+          </div>
           
         </div>
       </div>
@@ -50,7 +60,6 @@
 
     <section id="skills">
       <div class="container-fluid">
-
         <div class="box-1">
           <div class="profile">
             <img src="images/filename.png" class="profile-pic" alt="Norenz-picture">
@@ -60,7 +69,7 @@
               knowledge to help other people.</p>
           </div>
           <hr>
-          <div class="skills">
+          <div class="skills" id="tech-stack">
             <h2 class="semi-heading">My Skills.</h2>
             <div class="skill-row">
               <img class="html" src="images/html-5.png" alt="html">
@@ -79,7 +88,7 @@
             </div>
           </div>
           <hr>
-          <div class="contact-me">
+          <div class="contact-me" id="contact">
             <h2 class="semi-heading">Get In Touch</h2>
             <h3 class="semi-heading">Lorem ipsum dolor sit amet, non elit.</h3>
             <p>Lorem ipsum dolor sit amet, in quis, aenean amet. Phasellus sodales, tellus donec dui, ornare erat.</p>
@@ -105,5 +114,48 @@
 
     </section>
     
+
+    <script>
+    const checkpoint = 200;
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= checkpoint) {
+       
+        opacity = 1 - currentScroll / checkpoint;
+      } else {
+        opacity = 0;
+      }
+      document.querySelector(".big-heading").style.opacity = opacity;
+      document.querySelector(".sub-heading").style.opacity = opacity;
+      document.querySelector(".arrow").style.opacity = opacity;
+    });
+
+
+    // HEADER ANIMATION
+    $(document).ready(function(){
+    $(window).scroll(function(){
+
+  	let scroll = $(window).scrollTop();
+
+	  if (scroll > 550) {
+	    $(".header").css("background" , "grey");
+      $(".header").css("padding" , "25px 15px");
+	  }
+    else if (scroll > 5) {
+      $(".header").css("background" , "rgba(0,0,0,.5)")
+      $(".header").css("padding" , "25px 15px");
+
+    }
+	  else {
+		  $(".header").css("background" , "transparent");
+      $(".header").css("font-size" , "16px"); 
+      $(".header").css("padding" , "50px 30px");
+
+	  }
+  })
+})
+
+    </script> 
 </body>
 </html>
