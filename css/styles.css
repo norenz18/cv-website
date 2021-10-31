@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Ops+One&family=Permanent+Marker&family=Ubuntu:wght@300;400;500;700&display=swap');
+/* font-family: 'Alfa Slab One', cursive;
+font-family: 'Black Ops One', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Ubuntu', sans-serif; */
 
 *{
 
@@ -7,24 +12,44 @@
   scroll-behavior: smooth;
 
 }
-
 body{
 
   color: #40514E;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
 
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+
+  box-shadow: inset 50px 0 1px #add8e6; 
+  background: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #40514E; 
+
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+  background-color: #11CDD4; 
+}
 h1, h2, h3, h4, h5, h6{
 
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Black Ops One', cursive, sans-serif;
+  /* font-family: 'Alfa Slab One', cursive, sans-serif; */
+  /* font-family: 'Permanent Marker', cursive, sans-serif; */
   
 }
-.container-fluid{
+.container-fluid{ padding: 0; }
 
-  padding: 0;
-
-}
 .profile-pic{
 
   height: auto;
@@ -34,24 +59,39 @@ h1, h2, h3, h4, h5, h6{
 }
 .big-heading{
 
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 60%; 
+  width: 100%; 
+
+  filter: drop-shadow(2px 0 8px black);
   letter-spacing: 3px;
   color: #f0fff0;
   font-size: 5.625rem;
+  font-weight: 800;
   margin: 50px auto 0 auto;
+  z-index: 10;
 }
 .sub-heading{
 
-  color: #66BFBF;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 60%);
+  height: 100%; 
+  width: 100%; 
+  
+  color: #f0fff0;
+  font-family: 'Permanent Marker', cursive;
   font-size: 2rem;
   font-weight: normal;
   padding-bottom: 10px;
+  z-index: 10;
 
 }
-.semi-heading{
-
-  color: #11999E;
-
-}
+.semi-heading{ color: #11999E; }
 hr{
 
   border-width: 2px;
@@ -67,14 +107,29 @@ hr{
 
     background-color: #046582;
     height: 100vh;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     position: relative;
 
+}
+.box .overlay{
+
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(73, 73, 73,1);
+  mix-blend-mode: hard-light;
+  z-index: 1;
+
+}
+.box .bg-video{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 p{
 
   line-height: 2;
-  /* font-family: 'Montserrat', sans-serif; */
 }
 .box-1{
 
@@ -91,8 +146,6 @@ p{
 
   width: 50%;
   margin: 10px auto;
-
-
 }
 .box-2{
 
@@ -120,7 +173,7 @@ p{
 
 }
 
-.top-cloud{
+/* .top-cloud{
 
  position: absolute;
  top: 50px;
@@ -133,13 +186,17 @@ p{
   left: 200px;
   bottom: 200px;
 
-}
+} */
 
-.developer{
+/* .developer{
 
-  height: 60%;
-  width: auto;
-}
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 60%; 
+  width: auto; 
+} */
 
 /* Skills Section */
 
@@ -235,56 +292,41 @@ p{
   padding: 20px 0;
   
 }
+
+
 @media (max-width: 1024px){
 
-  .box .top-cloud{
+  .box .big-heading{
 
-    position: absolute;
-    right: 100px;
-
-   }
-   .box .technology{
-
-    position: absolute;
-    left: 100px;
-
-   }
-
-  .box .developer{
-
-    height: 50%;
-    width: auto;
- 
+    font-size: 4.625rem;
   }
 
 }
-@media (max-width: 900px){
 
-  .box .top-cloud, .technology{
-
-   display: none;
-  }
-
-  .box .developer{
-
-    height: 50%;
-    width: auto;
- 
-  }
-
-}
 @media (max-width: 768px){
 
-  .box .developer{
+  .box .big-heading{
 
-    height: 50%;
-    width: auto;
- 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    height: 35%; 
+    width: 100%; 
+
+  }
+  .box .sub-heading {
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 80%);
+  height: 80%; 
+  width: 100%; 
   }
 
   .box-1 .contact-me p{
 
-    
     align-items: center; 
     margin: 20px 50px;
     text-align: center;
@@ -297,22 +339,23 @@ p{
  /* Banner Section */
   .box .big-heading{
 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    height: 60%; 
+    width: 100%; 
     font-size: 3.5rem;
   }
   .box .sub-heading{
-
+    
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 65%);
+    height: 100%; 
+    width: 100%; 
     font-size: 1.5rem;
-  }
-  .box .top-cloud, .technology{
-
-    display: none;
-  }
-  .box .developer{
-
-    margin-top: 50px;
-    height: 35%;
-    width: auto;
- 
   }
 
   /* Skills Section */
@@ -330,10 +373,7 @@ p{
   }
   .box-1 .profile p{
 
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+   
     margin:  20px;
     text-align: center;
     width: auto;
@@ -377,9 +417,12 @@ p{
     text-align: center;
     width: auto;
   }
-  
+}
+@media (max-width: 320px){
 
+  .box .big-heading{
 
-
-
+    font-size: 2.5rem;
+    padding: 10px auto;
+  }
 }
